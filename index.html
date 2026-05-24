@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="mmGuard: A physics-based defense framework against physical adversarial attacks on mmWave radar sensing. IEEE Transactions on Information Forensics and Security.">
+  <meta name="keywords" content="mmWave radar, adversarial attacks, sensing security, defense, IEEE TIFS, metamaterials, autonomous driving">
+
+  <meta property="og:title" content="mmGuard: A Countermeasure against Physical Adversarial Attacks on mmWave Radar Sensing">
+  <meta property="og:description" content="A physics-driven defense framework against physical adversarial attacks on mmWave radar. IEEE TIFS 2026.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="static/images/teaser.png">
+
+  <title>mmGuard &middot; IEEE TIFS</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%A1%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <p class="venue-pill">
+            <i class="ai ai-ieee"></i>&nbsp;IEEE Transactions on Information Forensics and Security
+          </p>
+
+          <h1 class="title publication-title">
+            <span class="title-mark">mmGuard:</span>
+            A Countermeasure against Physical Adversarial Attacks on mmWave Radar Sensing
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ruixu&nbsp;Geng,</span>
+            <span class="author-block">Dongheng&nbsp;Zhang,</span>
+            <span class="author-block">Yadong&nbsp;Li,</span>
+            <span class="author-block">Jianyang&nbsp;Wang,</span>
+            <span class="author-block">Qian&nbsp;Liang,</span>
+            <span class="author-block">Rui&nbsp;Zhang,</span>
+            <span class="author-block">Xiaohan&nbsp;Xu,</span>
+            <span class="author-block">Zhi&nbsp;Lu,</span>
+            <span class="author-block">Yang&nbsp;Hu,</span>
+            <span class="author-block">Yan&nbsp;Chen</span>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="static/pdfs/mmGuard.pdf" class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#" class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>GitHub</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#bibtex" class="external-link button is-medium is-rounded is-dark">
+                <span class="icon"><i class="fas fa-quote-left"></i></span>
+                <span>BibTeX</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TEASER ============================== -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <figure class="figure-block">
+        <img src="static/images/teaser.png" alt="mmGuard teaser: physical adversarial attacks manipulate radar echoes; mmGuard restores correct perception.">
+        <figcaption>
+          <strong>Physical adversarial attacks (PAAs)</strong> manipulate mmWave radar echoes via specially crafted materials, causing safety-critical sensing failures.
+          <strong>mmGuard</strong> exploits unavoidable physical signatures of these materials to detect and mitigate the attack while preserving legitimate perception.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ABSTRACT ============================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Physical adversarial attacks (PAAs) pose a serious security threat to millimeter-wave (mmWave) radar systems used in safety-critical applications such as autonomous driving and security checking. These attacks, manipulating radar signals via specially crafted materials, are proven feasible and can cause severe sensing failures; however, effective defenses remain unexplored due to the difficulty of distinguishing adversarial examples from normal environmental objects.
+          </p>
+          <p>
+            This paper presents <strong>mmGuard</strong>, a physics-based defense framework that addresses this challenge by exploiting a fundamental insight: <em>the engineering process that makes materials adversarial inevitably creates detectable physical signatures.</em> We identify three key domains where adversarial examples show artificial nature: spatial phase discontinuities, anomalous radar cross-section patterns, and violations of natural physico-kinematic relationships. mmGuard systematically captures these signatures through multi-domain feature extraction, enhances their discriminability via neural refinement, and enables efficient per-object attack detection and mitigation compatible with automotive radar update rates.
+          </p>
+          <p>
+            To enable evaluation, we introduce <strong>mmAD</strong>, comprising over 110,000 annotated radar frames with diverse adversarial examples across realistic deployment scenarios. Experimental results demonstrate that mmGuard achieves over 90% detection accuracy while exhibiting strong in-distribution performance, with few-shot adaptation enabling calibration to unseen settings. Case studies further validate that mmGuard can reliably defend against PAAs in real-world settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== KEY INSIGHT ============================== -->
+<section class="section section-tinted">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Key Insight &mdash; Three Physical Fingerprints of Adversarial Materials</h2>
+        <p class="section-lead has-text-centered">
+          PAAs can mimic legitimate radar returns at the basic signal level, but a wave&ndash;matter interaction analysis reveals fingerprints they cannot hide.
+        </p>
+
+        <figure class="figure-block figure-narrow">
+          <img src="static/images/insight.png" alt="Three physical signatures distinguishing adversarial examples from natural objects.">
+        </figure>
+
+        <div class="columns is-multiline is-variable is-5 insight-cards">
+          <div class="column is-4">
+            <div class="insight-card">
+              <span class="insight-badge">a</span>
+              <h4>Spatial phase discontinuities</h4>
+              <p>Engineered surface structures introduce jagged or discontinuous spatial phase profiles across the antenna array, in contrast to the smooth phase fronts of natural objects.</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="insight-card">
+              <span class="insight-badge">b</span>
+              <h4>Anomalous RCS patterns</h4>
+              <p>Sub-wavelength unit cells tuned to a narrow resonance produce concentrated or artificially uniform energy in the range&ndash;angle domain, unlike the varied scattering of genuine targets.</p>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="insight-card">
+              <span class="insight-badge">c</span>
+              <h4>Physico-kinematic violations</h4>
+              <p>Rigid passive reflectors lack the micro-motion of real objects, so adversarial returns collapse onto a sharp zero-velocity line spanning a wide angular range.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== METHOD ============================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">The mmGuard Framework</h2>
+        <p class="section-lead has-text-centered">
+          A physics-driven, three-stage pipeline that turns the fingerprints above into a reliable per-object decision and a filtered radar cube.
+        </p>
+
+        <figure class="figure-block figure-wide">
+          <img src="static/images/framework.png" alt="The mmGuard framework: multi-domain feature extraction, feature refinement network, and hybrid fusion / detection.">
+          <figcaption>
+            <strong>Pipeline.</strong> (1)&nbsp;Multi-domain physical feature extraction (phase / RCS / angle&ndash;velocity);
+            (2)&nbsp;a feature refinement network with contrastive supervision per domain;
+            (3)&nbsp;hybrid fusion and per-object attack detection &amp; filtering, compatible with automotive radar update rates.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DATASET ============================== -->
+<section class="section section-tinted">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">mmAD &mdash; The First Public PAA Dataset for mmWave Radar</h2>
+    <p class="section-lead has-text-centered">
+      Acquired with a custom 12&times;16 MIMO platform (TI MMWCAS-RF-EVM, 77&ndash;81 GHz) on a motorized rail.
+      Provides raw ADC, range&ndash;Doppler&ndash;angle cubes, and per-object physical features &mdash; with scene photographs as ground truth.
+    </p>
+
+    <figure class="figure-block">
+      <img src="static/images/platform.png" alt="mmAD sample and the mobile sensor platform used for data collection.">
+    </figure>
+
+    <div class="table-container">
+      <table class="table is-striped is-hoverable is-fullwidth dataset-table">
+        <thead>
+          <tr>
+            <th>Sub-dataset</th>
+            <th>Frames&nbsp;(AE&nbsp;/&nbsp;NAE)</th>
+            <th>Adv.&nbsp;Labels</th>
+            <th>Primary contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>MPC</strong> &mdash; Material Property Characterization</td>
+            <td>~40k&nbsp;/&nbsp;~20k</td>
+            <td>&#10003;</td>
+            <td>In-depth study of material reflection characteristics under varied incident angles, distances, and motion patterns.</td>
+          </tr>
+          <tr>
+            <td><strong>AS</strong> &mdash; Application Scenarios</td>
+            <td>~5k&nbsp;/&nbsp;~5k</td>
+            <td>&#10003;</td>
+            <td>Performance evaluation in complex, realistic automotive and security-screening scenes.</td>
+          </tr>
+          <tr>
+            <td><strong>Enhanced Non-AE</strong></td>
+            <td>&mdash;&nbsp;/&nbsp;~40k</td>
+            <td>N/A</td>
+            <td>Broadens benign diversity (sourced from ColoRadar) to learn a stable natural-clutter boundary.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESULTS ============================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <p class="section-lead has-text-centered">
+      mmGuard consistently outperforms four baselines (RF Fingerprinting, end-to-end ResNet-50, RF&ndash;DL hybrid, AutoEncoder anomaly detector) across reflective, absorbing, and polarized adversarial materials.
+    </p>
+
+    <figure class="figure-block figure-wide">
+      <img src="static/images/results.png" alt="Detection and filtering examples comparing scenes with and without mmGuard.">
+      <figcaption>
+        For each scene: photograph (left), range&ndash;angle map <em>without</em> mmGuard (middle), and the corresponding map <em>with</em> mmGuard's filtering (right). Adversarial returns are removed while legitimate targets are preserved.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================== BIBTEX ============================== -->
+<section class="section section-tinted" id="bibtex">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <p class="section-lead has-text-centered">If you find mmGuard or mmAD useful in your research, please cite:</p>
+    <div class="bibtex-block">
+<pre><code id="bibtex-code">@article{geng2026mmguard,
+  author  = {Geng, Ruixu and Zhang, Dongheng and Li, Yadong and Wang, Jianyang and
+             Liang, Qian and Zhang, Rui and Xu, Xiaohan and Lu, Zhi and Hu, Yang and Chen, Yan},
+  title   = {{mmGuard}: A Countermeasure against Physical Adversarial Attacks on mmWave Radar Sensing},
+  journal = {IEEE Transactions on Information Forensics and Security},
+  year    = {2026},
+  note    = {To appear}
+}</code></pre>
+      <button class="button is-small is-rounded copy-btn" onclick="copyBibtex()">
+        <span class="icon"><i class="fas fa-copy"></i></span>
+        <span id="copy-label">Copy</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <p class="footer-small">
+        Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>, licensed under
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-SA&nbsp;4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/index.js"></script>
+</body>
+</html>
