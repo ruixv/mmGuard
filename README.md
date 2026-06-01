@@ -46,21 +46,27 @@ Network* (FRN) before a per-object attack decision:
 mmGuard achieves over **90% detection accuracy** with strong in-distribution
 performance, and few-shot adaptation enables calibration to unseen settings.
 
-## mmAD — the first public PAA dataset for mmWave radar
+## mmAD — a public PAA dataset for mmWave radar
 
-mmAD was acquired with a custom **12×16 MIMO platform** (TI MMWCAS-RF-EVM,
-77–81 GHz) on a motorized rail, and provides raw ADC, range–Doppler–angle
-cubes, and per-object physical features, with scene photographs as ground
-truth. It comprises **over 110,000 annotated radar frames** (≈109 GB,
-distributed as 9 HDF5 files).
+mmAD was collected with a custom **12×16 MIMO mmWave platform**
+(TI MMWCAS-RF-EVM, 77–81 GHz). The release comprises **over 110,000 annotated
+samples** (≈109 GB across 9 HDF5 files), each labelled as an adversarial
+example (**AE**) or a non-adversarial example (**NAE**).
 
-| Sub-dataset | Frames (AE / NAE) | Primary contribution |
+Each sample is provided as the three **physics-based feature representations**
+that mmGuard operates on (i.e., the inputs to the network, not raw recordings):
+
+| Feature | Shape | Domain |
 | --- | --- | --- |
-| **MPC** — Material Property Characterization | ~40k / ~20k | In-depth study of material reflection under varied incident angles, distances, and motion patterns. |
-| **AS** — Application Scenarios | ~5k / ~5k | Evaluation in complex, realistic automotive and security-screening scenes. |
-| **Enhanced Non-AE** | — / ~40k | Broadens benign diversity (sourced from ColoRadar) to learn a stable natural-clutter boundary. |
+| `phase_feature` | `(86,)` | spatial-phase descriptor |
+| `rcs_feature` | `(11, 11)` complex | range–angle RCS map |
+| `speed_feature` | `(256, 256)` complex | range–Doppler map |
 
-Adversarial examples cover **reflective, absorbing, and polarized** materials.
+The adversarial examples span **reflective, absorbing, and polarized** attack
+materials collected on our platform. The non-adversarial examples combine
+platform-collected benign scenes, signal-level augmentations, and additional
+benign data derived from ColoRadar, providing a broad natural-clutter boundary
+for training and evaluation.
 
 ## How to access the dataset and code
 
