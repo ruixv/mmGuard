@@ -74,13 +74,11 @@ To obtain mmAD, please sign the [data usage agreement](datasetAgreement.pdf),
 scan it, and email it to **gengruixu@mail.ustc.edu.cn**. You will receive a
 confirmation email within two days.
 
-Unlike a data-only release, the confirmation email delivers a **complete
-package** containing **both**:
+The confirmation email delivers a **complete package** containing **both**:
 
 1. the **mmAD dataset** download links (9 HDF5 files), and
-2. the **reference code** — the full mmGuard architecture (three-branch FRN +
-   fusion head), training and evaluation scripts, and a lazy HDF5 data loader,
-   with instructions to reproduce the per-attack accuracy / F1 results.
+2. the **reference code** — the full mmGuard architecture, training and
+   evaluation scripts, and a lazy HDF5 data loader.
 
 The dataset is released for **non-commercial academic research only**; please
 see the agreement for the full terms.

@@ -1,0 +1,8 @@
+# LaTeX source for the data agreement (kept local; PDF is the published artifact)
+datasetAgreement.tex
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
